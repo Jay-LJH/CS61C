@@ -17,11 +17,12 @@ main:
 
     # Load the address of the "square" function into a1 (hint: check out "la" on the green sheet)
     ### YOUR CODE HERE ###
-
-
+   
+    
+    la a1,square
+    
     # Issue the call to map
     jal ra, map
-
     # Print the squared list
     add a0, s0, x0
     jal ra, print_list
@@ -36,11 +37,10 @@ main:
 
     # Load the address of the "decrement" function into a1 (should be very similar to before)
     ### YOUR CODE HERE ###
-
+    la a1,decrement
 
     # Issue the call to map
     jal ra, map
-
     # Print decremented list
     add a0, s0, x0
     jal ra, print_list
@@ -52,7 +52,9 @@ main:
 map:
     # Prologue: Make space on the stack and back-up registers
     ### YOUR CODE HERE ###
-
+    addi sp,sp,-8
+    sw ra,0(sp)
+    sw a0,4(sp)
     beq a0, x0, done # If we were given a null pointer (address 0), we're done.
 
     add s0, a0, x0 # Save address of this node in s0
@@ -64,31 +66,34 @@ map:
     # Load the value of the current node into a0
     # THINK: Why a0?
     ### YOUR CODE HERE ###
-
+    lw a0,0(s0)
     # Call the function in question on that value. DO NOT use a label (be prepared to answer why).
     # Hint: Where do we keep track of the function to call? Recall the parameters of "map".
     ### YOUR CODE HERE ###
-
+    jalr ra,s1,0
     # Store the returned value back into the node
     # Where can you assume the returned value is?
     ### YOUR CODE HERE ###
-
+    sw a0,0(s0)
     # Load the address of the next node into a0
     # The address of the next node is an attribute of the current node.
     # Think about how structs are organized in memory.
     ### YOUR CODE HERE ###
-
+    lw a0,4(s0)
     # Put the address of the function back into a1 to prepare for the recursion
     # THINK: why a1? What about a0?
     ### YOUR CODE HERE ###
-
+    mv a1,s1
     # Recurse
     ### YOUR CODE HERE ###
-
+    jal ra,map
 done:
     # Epilogue: Restore register values and free space from the stack
     ### YOUR CODE HERE ###
-
+    
+    lw ra,0(sp)
+    lw s0,4(sp)
+    addi sp,sp,8
     jr ra # Return to caller
 
 # === Definition of the "square" function ===
