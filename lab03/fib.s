@@ -1,5 +1,5 @@
 .data
-n: .word 9
+n: .word 0x80000000
 
 .text
 main:
