@@ -72,7 +72,6 @@ inner_loop_start:
 	add t1,t0,s6
 	slli t0,s8,2
 	add t1,t1,t0
-    
 	sw a0,0(t1)
 
 inner_loop_end:

@@ -19,9 +19,8 @@ relu:
 	j exit
 loop_start:
 	lw a2,0(a0)
-	
-	xor a2,a2,a2
-	sw a2,0(a0)
+	bgt a2,x0,loop_continue
+	sw x0,0(a0)
 
 loop_continue:
 	addi a1, a1, -1
