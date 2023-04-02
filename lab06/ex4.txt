@@ -1,0 +1,4 @@
+clk-q 10
+mul 60
+setup 10
+sum 80

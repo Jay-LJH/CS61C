@@ -165,5 +165,40 @@
       <a name="output" val="true"/>
       <a name="width" val="8"/>
     </comp>
+    <comp lib="3" loc="(260,120)" name="Multiplier"/>
+    <comp lib="3" loc="(500,140)" name="Adder"/>
+    <comp lib="4" loc="(300,90)" name="Register">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp lib="4" loc="(560,90)" name="Register">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <wire from="(170,150)" to="(190,150)"/>
+    <wire from="(170,210)" to="(270,210)"/>
+    <wire from="(170,90)" to="(190,90)"/>
+    <wire from="(190,110)" to="(220,110)"/>
+    <wire from="(190,130)" to="(190,150)"/>
+    <wire from="(190,130)" to="(220,130)"/>
+    <wire from="(190,90)" to="(190,110)"/>
+    <wire from="(260,120)" to="(300,120)"/>
+    <wire from="(270,160)" to="(270,210)"/>
+    <wire from="(270,160)" to="(300,160)"/>
+    <wire from="(270,210)" to="(550,210)"/>
+    <wire from="(360,120)" to="(420,120)"/>
+    <wire from="(420,120)" to="(420,130)"/>
+    <wire from="(420,130)" to="(460,130)"/>
+    <wire from="(430,150)" to="(430,190)"/>
+    <wire from="(430,150)" to="(460,150)"/>
+    <wire from="(430,190)" to="(670,190)"/>
+    <wire from="(500,140)" to="(530,140)"/>
+    <wire from="(530,120)" to="(530,140)"/>
+    <wire from="(530,120)" to="(560,120)"/>
+    <wire from="(550,160)" to="(550,210)"/>
+    <wire from="(550,160)" to="(560,160)"/>
+    <wire from="(620,120)" to="(630,120)"/>
+    <wire from="(630,120)" to="(630,130)"/>
+    <wire from="(630,130)" to="(670,130)"/>
+    <wire from="(670,130)" to="(670,190)"/>
+    <wire from="(670,130)" to="(810,130)"/>
   </circuit>
 </project>
