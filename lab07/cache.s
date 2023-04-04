@@ -22,7 +22,7 @@
 array:	.word	2048 # max array size specified in BYTES (DO NOT CHANGE)
 
 .text
-main:	li	a0, 128	# array size in BYTES (should be a power of 2 < array size)
+main:	li	a0, 128# array size in BYTES (should be a power of 2 < array size)
 	li	a1, 1 # step size  (should be a power of 2 > 0)
 	li	a2, 1 # rep count  (int > 0)
 	li	a3, 0 # 0 = option 0, 1 = option 1
@@ -50,6 +50,7 @@ optionZero:
 	sw zero, 0(s0)
 wordCheck:
 	add	s0, s0, t1 # increment ptr
+    
 	blt	s0, s1, wordLoop # inner loop done?
 	addi a2, a2, -1
 	bgtz a2, accessWords # outer loop done?
